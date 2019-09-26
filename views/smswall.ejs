@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>VTK SMS-Wall</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+
+		<!-- Custom styles for this template -->
+		<style type="text/css">
+
+			#smsList {
+				font-size: 18pt;
+				opacity: 1;
+				color: #000;
+			}
+			#smsList img {
+				height: 0.9em;
+				padding-right: 20px;
+				vertical-align: middle;
+				opacity: 1.0;
+				width: : 80%;
+			}
+			#smsList li {
+				opacity: 0.8;
+				width: 100%;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+
+			<%if (sidebar=='vtk') { %>
+				<% include partials/sidebar_vtk %>
+			<% } %>
+			<%if (sidebar=='delta') { %>
+				<% include partials/sidebar_delta %>
+			<% } %>
+			<%if (sidebar=='speeddate') { %>
+				<% include partials/sidebar_speeddate %>
+			<% } %>
+
+			<!-- Main -->
+			<div id="main">
+				<section id="content">
+					<div class="container">
+						<ul class="list-group" id="smsList">
+						</ul>
+					</div> <!-- /container -->
+				</section>
+			</div>
+		</div>
+
+		<!-- Socket.io -->
+        <script src="/socket.io/socket.io.js"></script>
+        <!-- My scripts -->
+        <script src="/js/smswall.js"></script>
+	</body>
+</html>
